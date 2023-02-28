@@ -47,28 +47,34 @@ public:
 //    }
 //    }
 //
+float angle = math::PI/8;   //for testing, plz remove...
 
-
-    void update(float time) {
+    void update(float dt) {
         // Use the point to position an object in the scene
-        int y = 0;
-        int x = 0;
-        for (int i = 0; i < doodMap_.size(); i++) {
-            if (x > gridSize_) {y++; x = 0;}
-                setDoodPos(x, y, doodMap_[i]);
-            x++;
+        if (HitDectX(doodMap_[1])) {angle = math::PI - angle;
+        std::printf("balls");
         }
-       // setDoodPos(abs(round(5 * sin(i / 50))), abs(round(5 * cos(i / 50))), dood_);
+        std::cout << (angle) << "  ";
+        if (!HitDectY(doodMap_[1])) {shootDood(angle, doodMap_[1], dt);
+        std::printf("cock");
+        }
+        else {
+            setDoodPos(getDoodPosX(doodMap_[1]), getDoodPosY(doodMap_[1]), doodMap_[1]);
+        }
+
+        std::cout << "X: " << getDoodPosX(doodMap_[1]) << "  ";
+        std::cout << "Y: " << getDoodPosY(doodMap_[1]) << std::endl;
+
     }
 
     void setCoordSystem(int gridSize) {
         gridSize_ = gridSize;   //gridSize is specifiable by function
         OrigoX_ = -gridSize_ / 2 + 0.5; //Making the x and y origo for a coordinate system
         OrigoY_ = gridSize_ / 2 - 0.5;
-        std::cout << OrigoX_ << std::endl;
     }
 
-    void makeDood(int i) {
+
+    void makeDood(int i) {  //Just for testing, needs implementing
         {
             std::shared_ptr<BoxGeometry> boxGeometry_ = BoxGeometry::create(1, 1, 0);
 
@@ -93,22 +99,55 @@ public:
         return camera_;
     }
 
+    std::shared_ptr<Mesh> getDood(int doodKey) {
+        return doodMap_[doodKey];
+    }
+
     void setDoodPos(float x, float y, std::shared_ptr<Mesh> body){
         auto position = body->position;
-        position.setX(OrigoX_ + x);
-        position.setY(OrigoY_ - y);
-        std::cout << position << std:: endl;
+        position.setX(OrigoX_ + round(x));
+        position.setY(OrigoY_ - round(y));
+
+        std::cout << round(OrigoX_ + x);
+        std::cout << round(OrigoY_ - y) << std::endl;
         body->position = position;
+    }
+
+    float getDoodPosX(std::shared_ptr<Mesh> body) {
+        return body->position.x - OrigoX_;
+    }
+
+    float getDoodPosY(std::shared_ptr<Mesh> body) {
+        return -(body->position.y - OrigoY_);
     }
 
 
 
-void shootDood(float angle, std::shared_ptr<Mesh> body){
+    void shootDood(float angle, std::shared_ptr<Mesh> body, float dt){
+
+        float deltaDist = shootSpeed_*dt;
         auto position = body->position;
-        position.setX(OrigoX_);
-        position.setY(OrigoY_);
+        position.setX(position.x + deltaDist * cos(angle));
+        position.setY(position.y - deltaDist * sin(angle));
         body->position = position;
     }
+
+    bool HitDectY (std::shared_ptr<Mesh> body) {
+        auto position = body->position;
+        if(getDoodPosY(body) >= gridSize_-1) {
+            return true;
+        }
+        return false;
+    }
+
+    bool HitDectX (std::shared_ptr<Mesh> body) {
+        auto position = body->position;
+        if((getDoodPosX(body) >= gridSize_-1) || (getDoodPosX(body) < 0)) {
+            return true;
+        }
+        return false;
+    }
+
 
 
 
@@ -121,6 +160,7 @@ private:
     std::shared_ptr<Mesh> dood2_;
     float OrigoX_;
     float OrigoY_;
+    float shootSpeed_ = 2;
     std::unordered_map<int, std::shared_ptr<Mesh>> doodMap_;
 
 

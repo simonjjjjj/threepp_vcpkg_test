@@ -20,20 +20,25 @@ DoodScene scene(10);
         float aspectRatio = static_cast<float>(size.width) / static_cast<float>(size.height);
         scene.getCamera()->left = (-scene.getGridSize() / 2) * aspectRatio;
         scene.getCamera()->right = (scene.getGridSize() / 2) * aspectRatio;
-        scene.getCamera()->bottom = -scene.getGridSize() / 2;
-        scene.getCamera()->top = scene.getGridSize() / 2;
+        scene.getCamera()->bottom = scene.getGridSize() / 2;
+        scene.getCamera()->top = -scene.getGridSize() / 2;
         scene.getCamera()->updateProjectionMatrix();
         renderer.setSize(size);
 
     });
 
-for (int i = 0; i < 30; i++) { scene.makeDood(i);}
+scene.makeDood(1);
+scene.setDoodPos(0, 0, scene.getDood(1));
+
+scene.makeDood(2);
+scene.setDoodPos(5, 5, scene.getDood(2));
+
 
 float time = 0;
     canvas.animate([&](float dt) {
         time += dt;
         if(time > 1) {time = 0;}
-            scene.update(time);
+            scene.update(dt);
             renderer.render(scene.getScene(), scene.getCamera());
 
 
