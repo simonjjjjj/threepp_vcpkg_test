@@ -2,88 +2,11 @@
 -- Running vcpkg install
 warning: feature feature1 was passed, but that is not a feature supported by  supports.
 warning: feature feature2 was passed, but that is not a feature supported by  supports.
-Fetching registry information from https://github.com/Microsoft/vcpkg (HEAD)...
-Fetching registry information from https://github.com/Ecos-platform/vcpkg-registry (HEAD)...
 Detecting compiler hash for triplet x64-windows...
 Detecting compiler hash for triplet x86-windows...
-The following packages will be built and installed:
-  * egl-registry[core]:x86-windows -> 2022-09-20 -- C:\Users\sijoj\AppData\Local\vcpkg\registries\git-trees\e596b6c29ad16da764aab6f2fef830a3a884f14b
-  * glad[core,loader]:x86-windows -> 0.1.36 -- C:\Users\sijoj\AppData\Local\vcpkg\registries\git-trees\fa93b14c1581057e1d14650f5f15c9b0757dd548
-  * glfw3[core]:x86-windows -> 3.3.8#2 -- C:\Users\sijoj\AppData\Local\vcpkg\registries\git-trees\308cd3ebdf6752e9d5eeb2933f33972c784aa8bd
-    imgui[core,glfw-binding,opengl3-binding]:x86-windows -> 1.89.2 -- C:\Users\sijoj\AppData\Local\vcpkg\registries\git-trees\b1a7fdb074aed731c5c8ef09b369547e6371ac03
-  * opengl-registry[core]:x86-windows -> 2022-09-29 -- C:\Users\sijoj\AppData\Local\vcpkg\registries\git-trees\3456b7358048ad983b423973eca86e19d7939bd4
-  * stb[core]:x86-windows -> 2022-09-09 -- C:\Users\sijoj\AppData\Local\vcpkg\registries\git-trees\259df7e67a205697472aa4a3ff0326ac6fa60aa2
-    threepp[core]:x86-windows -> 2023-02-14 -- C:\Users\sijoj\AppData\Local\vcpkg\registries\git-trees\829c4bb15235e60b6d62bcb73da95b52cd6583fd
-  * vcpkg-cmake[core]:x64-windows -> 2022-12-22 -- C:\Users\sijoj\AppData\Local\vcpkg\registries\git-trees\1913f86defd2140d0a6751be2d51952e4090efa4
-  * vcpkg-cmake-config[core]:x64-windows -> 2022-02-06#1 -- C:\Users\sijoj\AppData\Local\vcpkg\registries\git-trees\8d54cc4f487d51b655abec5f9c9c3f86ca83311f
-Additional packages (*) will be modified to complete this operation.
-Restored 6 package(s) from C:\Users\sijoj\AppData\Local\vcpkg\archives in 432.3 ms. Use --debug to see more details.
-Installing 1/9 vcpkg-cmake-config:x64-windows...
-Elapsed time to handle vcpkg-cmake-config:x64-windows: 15.53 ms
-Installing 2/9 vcpkg-cmake:x64-windows...
-Elapsed time to handle vcpkg-cmake:x64-windows: 170.2 ms
-Installing 3/9 glfw3:x86-windows...
-Elapsed time to handle glfw3:x86-windows: 129.2 ms
-Installing 4/9 imgui:x86-windows...
-Building imgui[core,glfw-binding,opengl3-binding]:x86-windows...
--- Installing port from location: C:\Users\sijoj\AppData\Local\vcpkg\registries\git-trees\b1a7fdb074aed731c5c8ef09b369547e6371ac03
--- Note: imgui only supports static library linkage. Building static library.
--- Downloading https://github.com/ocornut/imgui/archive/v1.89.2.tar.gz -> ocornut-imgui-v1.89.2.tar.gz...
--- Extracting source C:/Users/sijoj/CLionProjects/vcpkg/downloads/ocornut-imgui-v1.89.2.tar.gz
--- Using source at C:/Users/sijoj/CLionProjects/vcpkg/buildtrees/imgui/src/v1.89.2-cbd3c24b10.clean
--- Found external ninja('1.11.0').
--- Configuring x86-windows
--- Building x86-windows-dbg
--- Building x86-windows-rel
--- Installing: C:/Users/sijoj/CLionProjects/vcpkg/packages/imgui_x86-windows/share/imgui/copyright
--- Performing post-build validation
-Stored binary cache: "C:\Users\sijoj\AppData\Local\vcpkg\archives\12\12ee8beb4ff4e6fed3cce0ede064f968cf4bfdcc1b55ea6ff2a18b45f38a1bd9.zip"
-Elapsed time to handle imgui:x86-windows: 16.75 s
-Installing 5/9 stb:x86-windows...
-Elapsed time to handle stb:x86-windows: 159.4 ms
-Installing 6/9 egl-registry:x86-windows...
-Elapsed time to handle egl-registry:x86-windows: 60.36 ms
-Installing 7/9 opengl-registry:x86-windows...
-Elapsed time to handle opengl-registry:x86-windows: 189.1 ms
-Installing 8/9 glad:x86-windows...
-Building glad[core,loader]:x86-windows...
--- Installing port from location: C:\Users\sijoj\AppData\Local\vcpkg\registries\git-trees\fa93b14c1581057e1d14650f5f15c9b0757dd548
--- Note: glad only supports static library linkage. Building static library.
--- Using cached Dav1dde-glad-1ecd45775d96f35170458e6b148eb0708967e402.tar.gz.
--- Cleaning sources at C:/Users/sijoj/CLionProjects/vcpkg/buildtrees/glad/src/708967e402-274d415499.clean. Use --editable to skip cleaning for the packages you specify.
--- Extracting source C:/Users/sijoj/CLionProjects/vcpkg/downloads/Dav1dde-glad-1ecd45775d96f35170458e6b148eb0708967e402.tar.gz
--- Applying patch encoding.patch
--- Applying patch find_python.patch
--- Using source at C:/Users/sijoj/CLionProjects/vcpkg/buildtrees/glad/src/708967e402-274d415499.clean
--- This version of glad uses the compatibility profile. To use the core profile instead, create an overlay port of this with GLAD_PROFILE set to 'core' or set GLAD_PROFILE to 'core' in a custom triplet.
--- This recipe is at C:/Users/sijoj/AppData/Local/vcpkg/registries/git-trees/fa93b14c1581057e1d14650f5f15c9b0757dd548
--- See the overlay ports documentation at https://github.com/microsoft/vcpkg/blob/master/docs/specifications/ports-overlay.md
--- Found external ninja('1.11.0').
--- Configuring x86-windows
--- Building x86-windows-dbg
--- Building x86-windows-rel
--- Installing: C:/Users/sijoj/CLionProjects/vcpkg/packages/glad_x86-windows/share/glad/copyright
--- Performing post-build validation
-Stored binary cache: "C:\Users\sijoj\AppData\Local\vcpkg\archives\81\817f74ca2d5d62ca0747bac2574ba601242110216cb0086befbe58b4fa64f73f.zip"
-Elapsed time to handle glad:x86-windows: 9.261 s
-Installing 9/9 threepp:x86-windows...
-Building threepp[core]:x86-windows...
--- Installing port from location: C:\Users\sijoj\AppData\Local\vcpkg\registries\git-trees\829c4bb15235e60b6d62bcb73da95b52cd6583fd
--- Downloading https://github.com/markaren/threepp/archive/c93848b33003ead25f5eaea3cd77fbe90f47fedc.tar.gz -> markaren-threepp-c93848b33003ead25f5eaea3cd77fbe90f47fedc.tar.gz...
--- Extracting source C:/Users/sijoj/CLionProjects/vcpkg/downloads/markaren-threepp-c93848b33003ead25f5eaea3cd77fbe90f47fedc.tar.gz
--- Using source at C:/Users/sijoj/CLionProjects/vcpkg/buildtrees/threepp/src/e90f47fedc-138157639b.clean
--- Downloading https://github.com/vallentin/glText/archive/8200fa70e32acec0a3cd777d404f41ee0c203ca4.tar.gz -> vallentin-glText-8200fa70e32acec0a3cd777d404f41ee0c203ca4.tar.gz...
--- Extracting source C:/Users/sijoj/CLionProjects/vcpkg/downloads/vallentin-glText-8200fa70e32acec0a3cd777d404f41ee0c203ca4.tar.gz
--- Using source at C:/Users/sijoj/CLionProjects/vcpkg/buildtrees/threepp/src/ee0c203ca4-4c0a13da5e.clean
--- Found external ninja('1.11.0').
--- Configuring x86-windows
--- Building x86-windows-dbg
--- Building x86-windows-rel
--- Installing: C:/Users/sijoj/CLionProjects/vcpkg/packages/threepp_x86-windows/share/threepp/copyright
--- Performing post-build validation
-Stored binary cache: "C:\Users\sijoj\AppData\Local\vcpkg\archives\4b\4be7754bb5445332c5e0f28992b7710b485a300cfe7949f684844808866075f5.zip"
-Elapsed time to handle threepp:x86-windows: 1.756 min
-Total install time: 2.209 min
+All requested packages are currently installed.
+Restored 0 package(s) from C:\Users\sijoj\AppData\Local\vcpkg\archives in 196.6 us. Use --debug to see more details.
+Total install time: 248 us
 imgui provides CMake targets:
 
     # this is heuristically generated, and may not be correct
@@ -97,18 +20,12 @@ threepp provides CMake targets:
     target_link_libraries(main PRIVATE glfw::glfw threepp::threepp)
 
 -- Running vcpkg install - done
--- The C compiler identification is MSVC 19.34.31937.0
--- The CXX compiler identification is MSVC 19.34.31937.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.34.31933/bin/Hostx86/x86/cl.exe - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.34.31933/bin/Hostx86/x86/cl.exe - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_TOOLCHAIN_FILE
+
+
 -- Build files have been written to: C:/Users/sijoj/CLionProjects/threepp_thing/cmake-build-debug
